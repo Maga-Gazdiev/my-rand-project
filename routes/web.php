@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +25,11 @@ Route::resources([
     'schedule' => 'App\Http\Controllers\ScheduleController',
     'search' => 'App\Http\Controllers\SearchController',
     'prof' => 'App\Http\Controllers\ProfController',
+    'teacher' => 'App\Http\Controllers\TeacherController',
 ]);
+
+Route::get('/news/show/{id}', [NewsController::class, 'sea'])->name('news.sea');
+Route::get('/teacher/show/{id}', [TeacherController::class, 'sea'])->name('teacher.sea');
 
 
 Route::get('/dashboard', function () {

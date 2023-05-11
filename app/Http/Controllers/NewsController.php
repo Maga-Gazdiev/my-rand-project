@@ -51,6 +51,12 @@ class NewsController extends Controller
         return redirect()->route('news.index');
     }
 
+    public function sea(string $id)
+    {
+        $posts = News::findOrFail($id);
+        return view('news.show', compact('posts'));
+    }
+
     public function edit(string $id)
     {
         $statusId = News::findOrFail($id);

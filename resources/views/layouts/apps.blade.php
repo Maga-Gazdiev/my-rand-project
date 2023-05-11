@@ -9,7 +9,7 @@
 
 <style>
     body {
-        background-color: #D3D3D3;
+        background-color: #B0C4DE;
     }
 </style>
 
@@ -40,7 +40,7 @@
                                                 <li><a class="dropdown-item" href="{{ route('news.index') }}">Новости</a></li>
                                                 <li><a class="dropdown-item">Дисциплины</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('schedule.index') }}">Расписание</a></li>
-                                                <li><a class="dropdown-item">Преподователи</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('teacher.index') }}">Преподователи</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -69,7 +69,7 @@
                                         Расписание</a>
                                 </li>
                                 <li class="nav-item active" style="width: 220px;">
-                                    <a class="text-primary block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 lg:p-0 nav-link">
+                                    <a href="{{ route('teacher.index') }}" class="text-primary block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 lg:p-0 nav-link">
                                         Преподаватели </a>
                                 </li>
                             </ul>

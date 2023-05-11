@@ -6,7 +6,7 @@
 @section('content')
 <style>
   main {
-    background-color: #FFE4E1;
+    background-color: #B0C4DE;
   }
 </style>
 
