@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->text('firstWeekMonday')->nullable();
             $table->text('firstWeekTuesday')->nullable();
             $table->text('firstWeekWednesday')->nullable();

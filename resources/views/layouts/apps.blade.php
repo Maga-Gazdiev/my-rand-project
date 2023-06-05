@@ -9,9 +9,10 @@
 
 <style>
     body {
-        background-color: #B0C4DE;
+        background-color: #EDC7B7;
     }
 </style>
+
 
 <body class="container-lg">
     <header class="flex-shrink-0">
@@ -38,7 +39,6 @@
                                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                                                 <li><a class="dropdown-item" href="{{ route('welcome') }}">Главная</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('news.index') }}">Новости</a></li>
-                                                <li><a class="dropdown-item">Дисциплины</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('schedule.index') }}">Расписание</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('teacher.index') }}">Преподователи</a></li>
                                             </ul>
@@ -61,10 +61,6 @@
                                         Новости</a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="text-primary block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 lg:p-0 nav-link">
-                                        Дисциплины </a>
-                                </li>
-                                <li class="nav-item active">
                                     <a href="{{ route('schedule.index') }}" class="text-primary block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 lg:p-0 nav-link">
                                         Расписание</a>
                                 </li>
@@ -84,14 +80,6 @@
                             </a>
                         </div>
                         @endguest
-                        @auth()
-                        <div style="width: 130px;"></div>
-                        <div class="flex items-center lg:order-2">
-                            <a href="{{ route('prof.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded ml-2">
-                                <img src="https://i.ibb.co/QYgx1QL/img-132207-Aq-HZg.png">           
-                            </a>
-                        </div>
-                        @endauth
                     </div>
 
                 </nav>

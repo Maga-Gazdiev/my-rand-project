@@ -7,15 +7,10 @@ use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
 {
-    public function welcome(Request $request)
-    {
-        $schedule = new Schedule();
-        return view('schedule.index', compact("schedule"));
-    }
-
     public function index(Request $request)
     {
         $schedule = new Schedule();
+        $schedule = $schedule->all();
         return view('schedule.index', compact("schedule"));
     }
 
@@ -28,29 +23,20 @@ class ScheduleController extends Controller
 
     public function show(string $id)
     {
-        
+        $schedule = Schedule::findOrFail($id);
+        return view('schedule.sea', compact('schedule'));
     }
+
     public function store(Request $request)
     {
         $schedule = new Schedule();
         $request->validate([
-            'name' => 'bail|required|max:1'
+            'name' => 'required|max:10'
         ]);
+
         $schedule->fill($request->all());
         $schedule->save();
 
         return redirect()->route('schedule.index');
-    }
-
-    public function edit(Schedule $schedule)
-    {
-    }
-
-    public function update(Request $request, Schedule $schedule)
-    {
-    }
-
-    public function destroy(Schedule $schedule)
-    {
     }
 }

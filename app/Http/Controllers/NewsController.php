@@ -13,8 +13,7 @@ class NewsController extends Controller
     {
         $news = new News();
         $news = News::paginate(5);
-        $new = $news->where('created_at', '>=', Carbon::today());
-        return view('news.news', compact("news", "new"));
+        return view('news.news', compact("news"));
     }
 
     public function create()
@@ -33,25 +32,7 @@ class NewsController extends Controller
         return redirect()->route("news.index");
     }
 
-    public function destroy(string $id)
-    {
-        $news = News::findOrFail($id);
-
-        if ($news->isNotEmpty()) {
-            return redirect()->route('news.index');
-        } else {        
-            $news->delete();
-        }
-
-        return redirect()->route('news.index');
-    }
     public function show(string $id)
-    {
-        $this->destroy($id);
-        return redirect()->route('news.index');
-    }
-
-    public function sea(string $id)
     {
         $posts = News::findOrFail($id);
         return view('news.show', compact('posts'));
@@ -61,14 +42,5 @@ class NewsController extends Controller
     {
         $statusId = News::findOrFail($id);
         return view('news.edit', compact('statusId'));
-    }
-
-    public function update(Request $request, string $id)
-    {
-        $news = News::findOrFail($id);
-        $news->fill($request->all());
-        $news->save();
-
-        return redirect()->route('news.index');
     }
 }

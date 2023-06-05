@@ -1,0 +1,40 @@
+body {
+    background-color: #696969;
+    font-family: cursive;
+    letter-spacing: 8px;
+}
+
+.text {
+    background-color: #696969;
+    letter-spacing: 8px;
+}
+
+.bb {
+    margin-top: 25px;
+    letter-spacing: 15px;
+}
+
+.text {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    margin-top: 100px;
+    margin-left: 35px;
+    margin-right: 35px;
+    text-decoration: none;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+.top {
+    vertical-align: text-top;
+}
+
+.cdd {
+    margin-bottom: 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
