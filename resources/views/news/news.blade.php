@@ -24,7 +24,7 @@
               <figure>
                 <blockquote class="blockquote">
                   <a href="{{ route('news.show', $new->id) }}" class="link text-dark">
-                    <h2>{{ substr($new->name, 0, 55) }}...</h2>
+                    <h2>{{ $new->name }}</h2>
                   </a>
                 </blockquote>
                 <figcaption class="blockquote-footer text-dark">
